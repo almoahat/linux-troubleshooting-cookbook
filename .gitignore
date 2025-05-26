@@ -1,0 +1,37 @@
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+*.log.*
+
+# Backup files
+*~
+*.bak
+*.swp
+*.tmp
+
+# Runtime / temporary
+*.pid
+*.sock
+*.out
+
+# Editor-specific
+.vscode/
+.idea/
+*.code-workspace
+
+# Test artifacts
+test-results/
+coverage/
+*.bats.log
+
+# System generated
+__pycache__/
+.env
+*.tar.gz
+*.zip
+
+# BATS core (if cloned locally)
+bats-core/

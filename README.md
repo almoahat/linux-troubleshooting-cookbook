@@ -26,4 +26,35 @@ Ensure you have the required permissions (some scripts require `sudo`).
 ## Sample Incident Reports
 
 See `incidents/` directory for write-ups of simulated issues and how they were resolved.
+## 📄 Sample Incident Reports
 
+- [High Disk Usage on /var](incidents/high_disk_usage.md)
+- [Failed Service Recovery](incidents/failed_service_recovery.md)
+- [DNS or Gateway Unreachable](incidents/network_outage_dns_gateway.md)
+- [Misconfigured Firewall Blocking SSH](incidents/misconfigured_firewall.md)
+
+## Alerting & Monitoring Scripts
+
+- `disk_usage_alert.sh`: Alerts if any partition exceeds 90% usage.
+- `logrotate_check.sh`: Verifies if logrotate is installed and shows basic config.
+- `cron_job_health_check.sh`: Simulates checking for key cron jobs for system health.
+
+## Running Tests
+
+This project includes BATS tests to validate that scripts execute as expected.
+
+### Setup
+
+1. Install [BATS](https://github.com/bats-core/bats-core):
+   ```bash
+   git clone https://github.com/bats-core/bats-core.git
+   cd bats-core
+   sudo ./install.sh /usr/local
+   ```
+
+2. Run all tests:
+   ```bash
+   bats test/
+   ```
+
+Some scripts (like `restart_failed_services.sh`) are Linux-only and require `systemctl`.
